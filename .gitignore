@@ -1,0 +1,11 @@
+*.swp
+*.crt
+*.key
+**/mlruns
+**/.env
+**/__pycache__/
+**/.langgraph_api/
+**/.coverage
+**/output/
+**/crash-*
+**/slow-unit-*
