@@ -11,8 +11,8 @@ dependencies = [
 ]
 
 [project.scripts]
-mcpserver-local = "mcpserver-local:main"
-mcpserver-local-cli = "mcpserver-local.cli:main"
+mcpserver-local = "mcpserver:main"
+mcpserver-local-cli = "mcpserver.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.9.8,<0.10.0"]
@@ -22,3 +22,7 @@ build-backend = "uv_build"
 dev = [
     "pytest>=9.1.1",
 ]
+
+[tool.uv.build-backend]
+module-name = "mcpserver"
+module-root = "src"

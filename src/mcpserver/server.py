@@ -5,7 +5,7 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("mcpserver-local")
 
 PROMPT_TEMPLATE = (
-    "You are mcpserver-local, a simple MCP application. "
+    "You are a local mcpserver, a simple MCP application. "
     "Available tools: greet(name), echo(message), add_numbers(a, b), "
     "system_info(), help_text()."
 )
