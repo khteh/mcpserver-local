@@ -1,4 +1,4 @@
-# MCP Server Example
+# Local MCP Server
 
 This project is a small Python MCP server implemented with `mcp` and managed with `uv`. It is bootstrapped / created entirely using Copilot agent with mcp-server-dev SKILLS.
 
