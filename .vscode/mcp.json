@@ -1,0 +1,22 @@
+{
+  "servers": {
+    "mcpserver-local": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "python", "-m", "src.mcpserver.main"],
+      "env": {
+        "SKIP_PYTEST_ON_MCP": "true"
+      },      
+      "cwd": "${workspaceFolder}",
+      "sandboxEnabled": true
+    }
+  },
+  "sandbox": {
+    "filesystem": {
+      "allowWrite": ["${workspaceFolder}"]
+    },
+    "network": {
+      "allowedDomains": ["api.example.com"]
+    }
+  }
+}
