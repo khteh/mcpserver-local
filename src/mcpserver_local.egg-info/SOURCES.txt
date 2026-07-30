@@ -1,12 +1,10 @@
 README.md
 pyproject.toml
-src/main.py
 src/mcpserver/__init__.py
-src/mcpserver/server.py
+src/mcpserver/main.py
 src/mcpserver_local.egg-info/PKG-INFO
 src/mcpserver_local.egg-info/SOURCES.txt
 src/mcpserver_local.egg-info/dependency_links.txt
-src/mcpserver_local.egg-info/entry_points.txt
 src/mcpserver_local.egg-info/requires.txt
 src/mcpserver_local.egg-info/top_level.txt
 tests/test_main.py

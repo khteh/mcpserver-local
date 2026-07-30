@@ -4,4 +4,5 @@ Version: 1.0.0
 Summary: Local MCP Server
 Author-email: "Kok How, Teh" <funcoolgeek@gmail.com>
 Requires-Python: >=3.14
-Requires-Dist: mcp
+Requires-Dist: fastmcp>=3.4.5
+Requires-Dist: mcp[cli]

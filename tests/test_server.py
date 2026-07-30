@@ -1,8 +1,13 @@
-from mcpserver.main import add_numbers, echo, greet, help_text, system_info
-
+import logging
+from mcpserver.main import add_numbers, echo, greet, system_info
+from pathlib import Path
+from src.mcpserver.main import configure_logging
 
 def test_greet_returns_expected_message() -> None:
     assert greet("Ada") == "Hello, Ada!"
+
+def test_greet_handles_quoted_name() -> None:
+    assert greet('-g "Mickey Mouse"') == "Hello, Mickey Mouse!"
 
 
 def test_echo_returns_input_message() -> None:
@@ -21,8 +26,10 @@ def test_system_info_returns_runtime_data() -> None:
     assert "python_version" in info
 
 
-def test_help_text_references_tool_names() -> None:
-    text = help_text()
+def test_configure_logging_creates_missing_directory(tmp_path: Path) -> None:
+    log_path = tmp_path / "nested" / "mcpserver.log"
 
-    assert "greet(name)" in text
-    assert "system_info()" in text
+    configure_logging(log_path)
+
+    assert log_path.parent.exists()
+    assert any(isinstance(handler, logging.Handler) for handler in logging.getLogger().handlers)

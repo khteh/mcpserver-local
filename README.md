@@ -1,55 +1,27 @@
 # Local MCP Server
 
-This project is a small Python MCP server implemented with `mcp` and managed with `uv`. It is bootstrapped / created entirely using Copilot agent with `mcp-server-dev` SKILLS.
+A not-so-useful local MCP server.
 
-## Launch the server
+# MCP Client
 
-From the repository root:
+## Visual Studio Code (Github CoPilot)
 
-```bash
-cd <project folder>
-uv run mcpserver-local
-```
+### greet
 
-This starts the MCP server using the default MCP transport, which is the stdio transport.
+- `Run the greet command passing '-g "Mickey Mouse"' as the argument.`
+  ![Greet](images/greet.png?raw=true "Greet")
 
-## Quick local test
+### echo
 
-A simple CLI helper is available for manual testing:
+- `Run the echo command tool passing '-e "Hello, what's up?"' as the argument.`
+  ![Echo](images/echo.png?raw=true "Echo")
 
-```bash
-uv run mcpserver-local-cli greet Ada
-uv run mcpserver-local-cli add_numbers 2 3
-uv run mcpserver-local-cli system_info
-uv run mcpserver-local-cli help
-```
+### add_numbers
 
-## How a client / agent connects
+- `Run the add_numbers command tool passing '-a 123 456' as the arguments.`
+  ![Add Numbers](images/add_numbers.png?raw=true "Add Numbers")
 
-The server is designed for local process-based connection via stdin/stdout. A client or agent can spawn `uv run mcpserver-local` and exchange MCP messages over the process pipes.
+### system_info
 
-### Local client pattern
-
-A typical client uses a subprocess to launch the server and then sends/receives MCP frames on stdin/stdout.
-
-Example pseudo-code:
-
-```python
-import subprocess
-
-proc = subprocess.Popen(
-    ["uv", "run", "mcpserver-local"],
-    stdin=subprocess.PIPE,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True,
-)
-
-# exchange MCP JSON/RPC frames with proc.stdin / proc.stdout
-# depending on the MCP client implementation
-```
-
-## Notes
-
-- `mcpserver-local-cli` is a convenience tool for local testing, not a transport endpoint for external MCP clients.
-- If you need network access later, the server can be extended with a transport that supports TCP or websockets.
+- `Run the system_info command tool passing '-i' as the argument.`
+  ![System Info](images/system_info.png?raw=true "System Info")

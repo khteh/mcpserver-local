@@ -1,3 +1,0 @@
-[console_scripts]
-mcpserver-local = src.mcpserver.server:main
-mcpserver-local-cli = src.main:main
