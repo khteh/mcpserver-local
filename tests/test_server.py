@@ -1,4 +1,4 @@
-from mcpserver.server import add_numbers, echo, greet, help_text, system_info
+from mcpserver.main import add_numbers, echo, greet, help_text, system_info
 
 
 def test_greet_returns_expected_message() -> None:

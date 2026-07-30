@@ -1,28 +1,16 @@
 [project]
 name = "mcpserver-local"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "Local MCP Server"
 authors = [
     { name = "Kok How, Teh", email = "funcoolgeek@gmail.com" }
 ]
 requires-python = ">=3.14"
 dependencies = [
-    "mcp>=1.28.1",
+    "mcp"
 ]
-
-[project.scripts]
-mcpserver-local = "mcpserver:main"
-mcpserver-local-cli = "mcpserver.cli:main"
-
-[build-system]
-requires = ["uv_build>=0.9.8,<0.10.0"]
-build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "pytest>=9.1.1",
+    "pytest",
 ]
-
-[tool.uv.build-backend]
-module-name = "mcpserver"
-module-root = "src"
