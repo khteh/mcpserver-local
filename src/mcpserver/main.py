@@ -5,7 +5,7 @@ from html import parser
 from platform import machine, python_version, system
 from sys import argv
 #from mcp.server.fastmcp import FastMCP
-from fastmcp import FastMCP     
+from fastmcp import FastMCP
 mcp = FastMCP("mcpserver-local")
 
 PROMPT_TEMPLATE = (
