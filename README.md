@@ -21,6 +21,11 @@ A not-so-useful local MCP server.
 - `Run the add_numbers command passing '-a 123 456' as the arguments.`
   ![Add Numbers](images/add_numbers.png?raw=true "Add Numbers")
 
+### fibonacci
+
+- `Run the fibonacci command passing '-f 25' as the arguments.`
+  ![Fibonacci](images/fibonacci.png?raw=true "Fibonacci")
+
 ### system_info
 
 - `Run the system_info command passing '-i' as the argument.`

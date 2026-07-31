@@ -1,5 +1,5 @@
 import logging
-from mcpserver.main import add_numbers, echo, greet, system_info
+from mcpserver.main import add_numbers, echo, fibonacci, greet, system_info
 from pathlib import Path
 from src.mcpserver.main import configure_logging
 
@@ -16,6 +16,10 @@ def test_echo_returns_input_message() -> None:
 
 def test_add_numbers_returns_sum() -> None:
     assert add_numbers(2, 3) == 5
+
+
+def test_fibonacci_parses_cli_style_input() -> None:
+    assert fibonacci('-f 25') == 75025
 
 
 def test_system_info_returns_runtime_data() -> None:

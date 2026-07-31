@@ -13,6 +13,7 @@ parser.add_argument('-g', '--greet', nargs='?', const='World', default='World', 
 parser.add_argument('-e', '--echo', nargs='?', const='', default='', help="Echo a message back to the user.")
 parser.add_argument('-a', '--add-numbers', nargs=2, type=int, default=(0, 0), help="Add two numbers together.")
 parser.add_argument('-i', '--system-info', action='store_true', help="Display system information")
+parser.add_argument('-f', '--fibonacci', type=int, help="Calculate the nth Fibonacci number.")
 
 def parse_args(argv: list[str] | str | None = None) -> argparse.Namespace:
     """
@@ -78,7 +79,27 @@ def add_numbers(a: int, b: int) -> int:
     logging.info(f"Adding numbers: {parsed_args.add_numbers[0]} + {parsed_args.add_numbers[1]}")
     return parsed_args.add_numbers[0] + parsed_args.add_numbers[1]
 
-
+@mcp.tool()
+def fibonacci(n: int | str) -> int:
+    """
+    Executes the fibonacci command with CLI parameters.
+    Pass arguments exactly as you would on the command line, like '--fibonacci 10'.
+    """
+    if isinstance(n, str):
+        parsed_args = parse_args(n)
+        n = parsed_args.fibonacci
+    if n < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        a, b = 0, 1
+        for _ in range(2, n + 1):
+            a, b = b, a + b
+        return b
+    
 @mcp.tool()
 def system_info(args:str) -> dict:
     """
