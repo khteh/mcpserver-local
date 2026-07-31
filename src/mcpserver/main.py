@@ -8,11 +8,6 @@ from sys import argv
 from fastmcp import FastMCP
 mcp = FastMCP("mcpserver-local")
 
-PROMPT_TEMPLATE = (
-    "You are a local mcpserver, a simple MCP application. "
-    "Available tools: greet(name), echo(message), add_numbers(a, b), "
-    "system_info()"
-)
 parser = argparse.ArgumentParser(description='A simple local MCP server application.')
 parser.add_argument('-g', '--greet', nargs='?', const='World', default='World', help="Greet a user by name. If no name is provided, defaults to 'World'.")
 parser.add_argument('-e', '--echo', nargs='?', const='', default='', help="Echo a message back to the user.")

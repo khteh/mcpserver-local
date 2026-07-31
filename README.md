@@ -13,15 +13,15 @@ A not-so-useful local MCP server.
 
 ### echo
 
-- `Run the echo command tool passing '-e "Hello, what's up?"' as the argument.`
+- `Run the echo command passing '-e "Hello, what's up?"' as the argument.`
   ![Echo](images/echo.png?raw=true "Echo")
 
 ### add_numbers
 
-- `Run the add_numbers command tool passing '-a 123 456' as the arguments.`
+- `Run the add_numbers command passing '-a 123 456' as the arguments.`
   ![Add Numbers](images/add_numbers.png?raw=true "Add Numbers")
 
 ### system_info
 
-- `Run the system_info command tool passing '-i' as the argument.`
+- `Run the system_info command passing '-i' as the argument.`
   ![System Info](images/system_info.png?raw=true "System Info")
